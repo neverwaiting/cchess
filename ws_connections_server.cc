@@ -23,7 +23,6 @@ const size_t kIdLen = 2;
 const size_t kHeadLen = 4;
 
 const uint16_t kClientPort = 8888;
-const char* backendIp = "192.168.235.10";
 const uint16_t kBackendPort = 2022;
 
 typedef std::shared_ptr<wsun::Disconnected> DisconnectedPtr;
@@ -241,11 +240,7 @@ int main(int argc, char* argv[])
   LOG_INFO << "pid = " << getpid();
   EventLoop loop;
   InetAddress listenAddr(kClientPort);
-  if (argc > 1)
-  {
-    backendIp = argv[1];
-  }
-  InetAddress backendAddr(backendIp, kBackendPort);
+  InetAddress backendAddr(kBackendPort);
   WsConnectionServer server(&loop, listenAddr, backendAddr);
 
   server.start();
