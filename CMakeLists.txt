@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 
 project(cchess)
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -O2")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread -O2")
 
 add_subdirectory(websocket)
 

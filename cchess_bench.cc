@@ -285,8 +285,8 @@ private:
 	
 	::wsun::RoomType getRoomType()
 	{
-		using ::wsun::RoomType::QUICKLY_PATTERN;
-		using ::wsun::RoomType::SLOWLY_PATTERN;
+		using ::wsun::QUICKLY_PATTERN;
+		using ::wsun::SLOWLY_PATTERN;
 		return (playedTimes_ % 2 == 0 ? 
 				(data_->quicklyPatternTimes == 0 ? SLOWLY_PATTERN : QUICKLY_PATTERN) :
 				(data_->slowlyPatternTimes == 0 ? QUICKLY_PATTERN : SLOWLY_PATTERN));
@@ -541,7 +541,7 @@ const int BenchMark::kTaskThreadNum = 2;
 int main(int argc, char** argv)
 {
 	int clientNum = atoi(argv[1]);
-	const InetAddress serverAddr("192.168.235.10", 8888);
+	const InetAddress serverAddr("127.0.0.1", 8888);
 	EventLoop loop;
 	BenchMark bench(&loop, serverAddr, clientNum);
 	bench.start();
