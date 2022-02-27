@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wintersun's chineseChess</title>
+    <link rel="stylesheet" href="css/cchess.css">
+
+    <body>
+        <div class="main-container">
+            <div class="left-pannel">
+                <div class="user-info">
+                    <div class="user">
+                        <div class="avatar">
+                            <svg class="svg" width="100px" height="90px">
+                                <rect id="oppRect" class="rect" width="100%" height="100%"></rect>
+                            </svg>
+                            <img src="img/background/avatar1.png" alt="">
+                            <div id="oppUsername" class="username"></div>
+                        </div>
+                        <div class="detail-info">
+                            <div class="line"><label>总积分:</label><label id="oppScore"></label></div>
+                            <div class="line"><label>胜率:</label><label id="oppPercent"></label></div>
+                            <div class="line"><label>胜利:</label><label id="oppWin"></label></div>
+                            <div class="line"><label>失败:</label><label id="oppLoss"></label></div>
+                            <div class="line"><label>和棋:</label><label id="oppDraw"></label></div>
+                        </div>
+                        <div class="situation"><label>局时：</label><label id="oppGameTime"></label></div>
+                        <div class="step"><label>步时：</label><label id="oppStepTime"></label></div>
+                    </div>
+                    <div id="currentSideFlag" class="current-player-flag"></div>
+                    <div class="user">
+                        <div class="avatar">
+                            <svg class="svg" width="100px" height="90px">
+                                <rect id="selfRect" class="rect" width="100%" height="100%"></rect>
+                            </svg>
+                            <img src="img/background/avatar2.png" alt="">
+                            <div id="selfUsername" class="username"></div>
+                        </div>
+                        <div class="detail-info">
+                            <div class="line"><label>总积分:</label><label id="selfScore"></label></div>
+                            <div class="line"><label>胜率:</label><label id="selfPercent"></label></div>
+                            <div class="line"><label>胜利:</label><label id="selfWin"></label></div>
+                            <div class="line"><label>失败:</label><label id="selfLoss"></label></div>
+                            <div class="line"><label>和棋:</label><label id="selfDraw"></label></div>
+                        </div>
+                        <div class="situation"><label>局时：</label><label id="selfGameTime"></label></div>
+                        <div class="step"><label>步时：</label><label id="selfStepTime"></label></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mid-pannel">
+                <div class="title"></div>
+                <div id="board" class="board"></div>
+                <div class="btns">
+                    <button id="forgive-btn" onclick="onForgiveRequestBtnClick()">悔棋</button>
+                    <button id="draw-btn" onclick="config.uiDisplayer.displaySelfDrawRequestDialog()">和棋</button>
+                    <button id="giveup-btn" onclick="config.uiDisplayer.displayGiveupDialog()">认输</button>
+                </div>
+            </div>
+            <div class="right-pannel">
+                <div class="radio-box">
+                    <div id="bk-checked" class="radio-btn-off" onclick="toggleBkMusic('bk-checked')"></div>
+                    <label>背景音乐</label>
+                </div>
+                <div class="radio-box" onclick="">
+                    <div id="sound-checked" class="radio-btn" onclick="toggleSoundEffect('sound-checked')"></div>
+                    <label>走子音效</label>
+                </div>
+                <div class="radio-box" onclick="">
+                    <div id="animation-checked" class="radio-btn" onclick="toggleAnimation('animation-checked')"></div>
+                    <label>走子动画</label>
+                </div>
+                <div class="radio-box" onclick="">
+                    <div id="prompt-checked" class="radio-btn" onclick="togglePrompt('prompt-checked')"></div>
+                    <label>走子提示</label>
+                </div>
+                <select name="棋子风格" id="pieceStyle" onchange="onChangePieceStyle()">
+                    <option value="">STYLE1</option>
+                    <option value="">STYLE2</option>
+                    <option value="">STYLE3</option>
+                    <option value="">STYLE4</option>
+                </select>
+                <select name="棋盘风格" id="boardStyle" onchange="onChangeBoardStyle()">
+                    <option value="">CANVAS</option>
+                    <option value="">DROPS</option>
+                    <option value="">SHEET</option>
+                    <option value="">WHITE</option>
+                    <option value="">WOOD</option>
+                </select>
+                <select id="stepRecords" size="17" onchange="onChangeStepRecords()">
+                    
+                </select>
+            </div>
+        </div>
+        <script src="js/config.js"></script>
+        <script src="js/constants.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/board.js"></script>
+        <script src="js/displayer.js"></script>
+        <script src="js/chinese_chess.js"></script>
+        <script src="js/adler32.js"></script>
+        <script src="js/cchess_proto.js"></script>
+        <script src="js/net.js"></script>
+    </body>
+
+</html>

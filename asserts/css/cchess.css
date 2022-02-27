@@ -1,0 +1,302 @@
+@font-face {
+    font-family: hwxkFont;
+    src: url(../fonts/huawenxingkai.ttf)
+}
+
+* {
+    font-family: hwxkFont;
+    font-size: 25px;
+    /* color: goldenrod; */
+    color:plum;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(../img/background/bg.jpg);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.title {
+    background: url(../img/background/title.png) no-repeat center center;
+    height: 106px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.main-container {
+    width: 1180px;
+    height: 768px;
+    margin: 0 auto;
+}
+
+.left-pannel {
+    width: 300px;
+    height: 768px;
+    float: left;
+}
+.mid-pannel {
+    width: 600px;
+    height: 768px;
+    float: left;
+}
+.right-pannel {
+    width: 270px;
+    height: 768px;
+    float: left;
+}
+
+.board {
+    width: 521px;
+    height: 577px;
+    margin: 0 auto;
+    border: 3px solid greenyellow;
+    border-radius: 10px;
+    background-image: url(../img/board/WHITE.JPG);
+}
+
+.radio-box {
+    width: 230px;
+    height: 49px;
+    margin-left: 20px;
+}
+.radio-box label {
+    font-size: 38px;
+    line-height: 58px;
+    display: inline-block;
+}
+
+.radio-box .radio-btn {
+    display: inline-block;
+    width: 49px;
+    height: 49px;
+    background: url(../img/background/check_on.png) no-repeat 0 0;
+}
+.radio-box .radio-btn-off {
+    display: inline-block;
+    width: 49px;
+    height: 49px;
+    background: url(../img/background/check_off.png) no-repeat 0 0;
+}
+
+.radio-btn:hover {
+    cursor: pointer;
+    /* text-shadow: 2px 2px 0 gray; */
+}
+
+#pieceStyle, #boardStyle {
+    width: 250px;
+    display: block; 
+    margin-left: 20px;
+    margin-top: 10px;
+}
+#stepRecords {
+    width: 250px;
+    height: 470px;
+    font-size: 18px;
+    padding: 8px;
+    border: 3px yellowgreen solid;
+    outline: none;
+    background-color: transparent;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/* for user */
+.user-info {
+    width: 390px;
+    height: 768px;
+
+}
+.user {
+    height: 310px;
+    width: 240px;
+}
+
+.user .avatar {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.detail-info {
+    margin-left: 40px;
+}
+.detail-info .line {
+    border: 1px solid palegreen;
+}
+
+.user .situation,
+.user .step {
+    margin-left: 60px;
+    margin-top: 5px;
+    
+}
+.user .situation label,
+.user .step label {
+    color:goldenrod;
+}
+
+.current-player-flag {
+    width: 280px;
+    height: 100px;
+    background-image: url(../img/pieces/style1/RK.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.run-anim {
+    -webkit-animation-name: dash;
+    -moz-animation-name: dash;
+    -o-animation-name: dash;
+    animation-name: dash;
+    animation-duration: 0s;
+    animation-play-state: paused;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+.rect {
+    fill: none;
+    stroke: #000;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 6px;
+    stroke-dasharray: 380;
+    stroke-dashoffset: 380;
+}
+
+@keyframes dash {
+    0% {
+        stroke: #84ffc7;
+        stroke-dashoffset: 380;
+    }
+    100% {
+        stroke: #84ffc7;
+        stroke-dashoffset: 0;
+    }
+}
+
+.avatar {
+    position: relative;
+}
+
+.svg {
+    position: absolute;
+}
+
+.btns button {
+    margin-top: 10px;
+    margin-left: 40px;
+    width: 150px;
+    color:goldenrod;
+}
+
+.btn {
+    text-align: center;
+    padding-top: 30px;
+    margin: 0 auto;
+    width: 366px;
+    height: 83px;
+    color: bisque;
+    background: url(../img/background/button_1.png) no-repeat center center;
+    transition: all .2s ease-in-out;
+}
+
+.btn:hover {
+    background: url(../img/background/button_2.png) no-repeat center center;
+    height: 85px;
+    font-size: 27px;
+    color: goldenrod;
+    cursor: pointer;
+}
+
+.message-box {
+    position: absolute;
+    top: 20px;
+    opacity: 0;
+    width: 420px;
+    text-align: center;
+    background-color: gray;
+    display: inline-block;
+    z-index: 999;
+    transition: all 1s ease-in-out;
+    border-radius: 10px;
+    font-size: 33px;
+}
+.mask-style {
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    z-index: 998;
+    transition: all .6s ease-in-out;
+}
+
+.itext {
+    background: url(../img/background/input_text.png) no-repeat center center;
+    padding-left:10px;
+    position: relative;
+    height: 50px;
+    width: 250px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.dialog-style-common {
+    opacity: 0;
+    transition: all .6s ease-in-out;
+    z-index: 999;
+    width: 405px;
+    height: 543px;
+    text-align: center;
+    background-image: url(../img/background/dialog_bg_2.png);
+    position: absolute;
+}
+.dialog-style-1 {
+    line-height: 543px;
+    font-size: 50px;
+}
+
+.dialog-text {
+    display: inline-block;
+    position: relative;
+    margin-top: 130px;
+    margin-bottom: 70px;
+    font-size: 35px;
+}
+.dummy {
+    height: 80px;
+}
+.game-result-img {
+    background: url(../img/background/play_win.png) no-repeat center center;
+    width: 210px;
+    height: 95px;
+    margin: 0 auto;
+}
+.game-result-text {
+    text-align: center;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 35px;
+}
+.game-result-info {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: darkorange;
+}

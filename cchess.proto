@@ -1,0 +1,148 @@
+syntax = "proto3";
+
+package wsun;
+
+message UserInfo
+{
+	string username = 1;
+	int32 score = 2;
+	int32 total = 3;
+	int32 nwin = 4;
+	int32 nloss = 5;
+}
+
+message LoginRequest
+{
+	string username = 1;
+	string passwd = 2;
+}
+
+message LoginSuccessResponse
+{
+	UserInfo userInfo = 1;
+}
+
+message LoginFailedResponse
+{
+	enum FailedReason
+	{
+		MULTI_LOGIN = 0;
+		VERTIFY_ERROR = 1;
+	};
+	FailedReason reason = 1;
+}
+
+enum RoomType
+{
+	QUICKLY_PATTERN = 0;
+	SLOWLY_PATTERN = 1;
+}
+
+message MatchRequest
+{
+	RoomType type = 1;
+}
+
+message MatchResponse
+{
+	UserInfo oppUser = 1;
+	enum PlayerType
+	{
+		RED = 0;
+		BLACK = 1;
+	}
+	PlayerType selfType = 2;
+	RoomType type = 3;
+}
+
+message UserMatchInfo
+{
+	string username = 1;
+	int32 score = 2;
+	RoomType type = 3;
+}
+
+message MatchBackendRequest
+{
+	UserMatchInfo info = 1;
+}
+
+message MatchBackendResponse
+{
+	string redUsername = 1;
+	string blackUsername = 2;
+	RoomType type = 3;
+}
+
+message MoveStep
+{
+	bool over = 1;
+	int32 mv = 2;
+	string fen = 3;
+}
+
+message Giveup {}
+message ForgiveRequest {}
+message ForgiveResponse
+{
+	bool agree = 1;
+	string fen = 2;
+	int32 mv = 3;
+}
+message DrawRequest {}
+message DrawResponse
+{
+	bool agree = 1;
+}
+
+message OppDisconnected {}
+message OppReconnected {}
+
+message GameSituation
+{
+	message GameTimeInfo
+	{
+		int32 gameSpendTime = 1;
+		int32 stepSpendTime = 2;
+	}
+	UserInfo self = 1;
+	UserInfo opp = 2;
+	bool red = 3;
+	bool turnToMe = 4;
+	RoomType roomType = 5;
+	GameTimeInfo selfTime = 6;
+	GameTimeInfo oppTime = 7;
+	int32 lastMv = 8;
+	string fen = 9;
+}
+
+message Disconnected {}
+
+message GameOver
+{
+	enum OverType
+	{
+		SELF_TIMEOUT = 0;
+		OPP_TIMEOUT = 1;
+		SELF_GIVEUP = 2;
+		OPP_GIVEUP = 3;
+		DRAW = 4;
+		WIN = 5;
+		LOSS = 6;
+	}
+	OverType type = 1;
+	int32 changeScore = 2;
+	int32 selfSpendGameTime = 3;
+	int32 oppSpendGameTime = 4;
+}
+
+message CancelMatchRequest {}
+message CancelMatchBackendRequest
+{
+	string username = 1;
+}
+
+message UpdateUserInfo
+{
+	UserInfo info = 1;
+}
