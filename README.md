@@ -22,10 +22,10 @@ mkdir build && cd build && cmake .. && make
 ```
 * 编译成功后可以使用`startup.sh start`来启动所有服务。
 * startup.sh 可以跟以下参数
-- start 启动所有服务
-- stop 暂停所有服务
-- monitor 查看所有服务的负载情况
-- clear 清空日志文件
+1. start 启动所有服务
+2. stop 暂停所有服务
+3. monitor 查看所有服务的负载情况
+4. clear 清空日志文件
 * 注意，一定要改写IP地址和端口号。
 
 ## 服务器实现基本思路
