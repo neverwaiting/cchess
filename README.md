@@ -26,7 +26,7 @@ mkdir build && cd build && cmake .. && make
 2. stop 暂停所有服务
 3. monitor 查看所有服务的负载情况
 4. clear 清空日志文件
-* 注意，一定要改写IP地址和端口号。
+* 服务器默认端口是8888，可以根据自己的实际情况进行改写。
 
 ## 服务器实现基本思路
 * 总的分为4个服务模块，login_server、match_server、center_server、ws_connections_server
