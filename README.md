@@ -1,7 +1,7 @@
 # chinese chess
 
 ## 项目演示
-* 视频链接: [https://www.bilibili.com/video/BV1Ma411h7NM?share_source=copy_web](https://www.bilibili.com/video/BV1Ma411h7NM?share_source=copy_web)
+* 视频链接：[https://www.bilibili.com/video/BV1Ma411h7NM?share_source=copy_web](https://www.bilibili.com/video/BV1Ma411h7NM?share_source=copy_web)
 * 网站访问：[http://cchess.nstop.cn](http://cchess.nstop.cn)
 ## 简介
 * 这是一个网页版本的多人在线匹配游戏的中国象棋。
