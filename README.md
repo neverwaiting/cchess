@@ -1,4 +1,4 @@
-# a chinese chess project base on websit-server(BS) mode
+# chinese chess project
 
 ## 项目演示
 * 视频链接：[https://www.bilibili.com/video/BV1Ma411h7NM?share_source=copy_web](https://www.bilibili.com/video/BV1Ma411h7NM?share_source=copy_web)
