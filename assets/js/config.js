@@ -1,6 +1,6 @@
 var config = {
     // 服务器地址
-    address: "ws://192.168.235.10:8888",
+    address: "ws://127.0.0.1:8888",
     // ui部件
     uiDisplayer: null,
     net: null,

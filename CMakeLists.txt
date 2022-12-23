@@ -4,6 +4,9 @@ project(cchess)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread -O2")
 
+add_subdirectory("third/muduo")
+include_directories("third/muduo")
+
 add_subdirectory(websocket)
 
 add_custom_command(OUTPUT cchess.pb.h cchess.pb.cc

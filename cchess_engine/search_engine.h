@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <inttypes.h>
+#include <ctime>
 #include "board.h"
 
 namespace wsun
