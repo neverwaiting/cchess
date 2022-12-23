@@ -2,7 +2,7 @@
 
 ## 项目演示
 * 视频链接：[https://www.bilibili.com/video/BV1Ma411h7NM?share_source=copy_web](https://www.bilibili.com/video/BV1Ma411h7NM?share_source=copy_web)
-* 网站访问：[http://nstop.cn/cchess](http://nstop.cn/cchess) 用户名：`wintersun0 ~ wintersun59999` 密码：`123456`
+* 网站访问：[https://nstop.cn/cchess](https://nstop.cn/cchess) 用户名：`wintersun0 ~ wintersun59999` 密码：`123456`
 ## 简介
 * 这是一个网页版本的多人在线匹配游戏的中国象棋。
 * 客户端用html+css+原生js设计的，没有使用任何框架。
@@ -20,10 +20,15 @@
 * 注意！根据您的实际情况改写`assert/js/config.js`文件中的服务器地址。
 
 ### 服务端部署
-* 编译源文件
+* 编译源文件(下面两种方式任选其一)
 ```shell
-mkdir build && cd build && cmake .. && make
+mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=release .. && make -j$(nproc)
 ```
+or
+```shell
+cmake -DCMAKE_BUILD_TYPE=release -Bbuild && cmake --build build -j$(nproc)
+```
+
 * 编译成功后可以使用`startup.sh start`来启动所有服务。
 * startup.sh 可以跟以下参数
 1. start 启动所有服务
