@@ -2,7 +2,7 @@
 
 ## 项目演示
 * 视频链接：[https://www.bilibili.com/video/BV1Ma411h7NM?share_source=copy_web](https://www.bilibili.com/video/BV1Ma411h7NM?share_source=copy_web)
-* 网站访问：[http://cchess.nstop.cn](http://cchess.nstop.cn) 用户名：`wintersun0 ~ wintersun59999` 密码：`123456`
+* 网站访问：[http://nstop.cn/cchess](http://nstop.cn/cchess) 用户名：`wintersun0 ~ wintersun59999` 密码：`123456`
 ## 简介
 * 这是一个网页版本的多人在线匹配游戏的中国象棋。
 * 客户端用html+css+原生js设计的，没有使用任何框架。
@@ -12,10 +12,10 @@
 ## 如何使用
 
 ### 构建环境
-* 在构建之前必须安装google protobuf 和 muduo 网络库 以及 zlib、cmake。
+* 在构建之前必须安装google protobuf, boost, zlib, cmake 以及c++编译器（gcc or clang）。
 
 ### 客户端部署
-* assert文件下都是前端静态资源文件。
+* assets文件下都是前端静态资源文件。
 * 您可以使用nginx简单部署这个静态网页。
 * 注意！根据您的实际情况改写`assert/js/config.js`文件中的服务器地址。
 
